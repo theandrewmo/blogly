@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block details %}
+    <div class="d-flex align-items-center">
+        <img src={{user.image_url}} alt="" class="img-thumbnail" width="150px" height="150px">
+        <div class="container">
+            <div class="container">
+                <h1>{{user.get_full_name()}}</h1>
+            </div>
+            <div class="container d-flex">
+                <a class='btn btn-primary' href="/users/{{user.id}}/edit">Edit</a> 
+                <form action="/users/{{user.id}}/delete" method="POST">
+                    <button class='btn btn-danger'>Delete</button>
+                </form>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+
+{% endblock %}
+  

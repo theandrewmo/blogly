@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block create_user %}
+
+    <h1>Create a User</h1>
+    <form action="/users/new" method="POST">
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class='form-control' name="first_name" id="first_name" placeholder="Enter a first name" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class='form-control' name="last_name" id="last_name" placeholder="Enter a last name">
+        </div>
+        <div class="form-group">
+            <label for="image_url">Image URL</label>
+            <input type="url" class='form-control' name="image_url" id="image_url" placeholder="Provide an image of this user">
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class='btn btn-success'>Add</button>
+        </div>
+    </form>
+   
+{% endblock %}
