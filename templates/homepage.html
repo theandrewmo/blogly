@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block homepage %}
+    {% if recent_posts %}
+        {% for post in recent_posts %}
+            <h1>{{post.title}}</h1>
+            <p>{{post.content}}</p>
+            <p>By {{post.users.get_full_name()}} on {{post.friendly_created_at()}}</p> 
+        {% endfor %}
+    {% else %}
+        <h1>No recent posts</h1>
+    {% endif %}
+{% endblock %}

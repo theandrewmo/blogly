@@ -9,7 +9,20 @@
     <title>Blogly</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users">Users</a>
+            </li>
+        </ul>
+    </nav>
     <div class="container">
+        {% block homepage %}
+        {% endblock %}
+
         {% block users %}
         {% endblock %}
 
@@ -21,6 +34,19 @@
 
         {% block create_user %}
         {% endblock %}
+
+        {% block add_post %}
+        {% endblock %}
+
+        {% block post_details %}
+        {% endblock %}
+
+        {% block edit_post %}
+        {% endblock %}
+
+        {% block err %}
+        {% endblock %}
+
     </div>
 </body>
 </html>
