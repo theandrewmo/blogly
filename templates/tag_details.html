@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block tag_details %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">{{message}}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>{{tag.name}}</h1>
+    <ul>
+        {% for post_tag in post_tags %}
+        <li><a href="/posts/{{post_tag.post.id}}">{{post_tag.post.title}}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div class="container d-flex">
+        <a class='btn btn-primary' href="/tags/{{tag.id}}/edit">Edit</a> 
+        <form action="/tags/{{tag.id}}/delete" method="POST">
+            <button class='btn btn-danger'>Delete</button>
+        </form>
+    </div>
+
+{% endblock %}

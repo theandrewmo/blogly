@@ -17,6 +17,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/users">Users</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tags">Tags</a>
+            </li>
         </ul>
     </nav>
     <div class="container">
@@ -45,6 +48,18 @@
         {% endblock %}
 
         {% block err %}
+        {% endblock %}
+
+        {% block all_tags %}
+        {% endblock %}
+
+        {% block tag_details %}
+        {% endblock %}
+
+        {% block add_tag %}
+        {% endblock %}
+
+        {% block edit_tag %}
         {% endblock %}
 
     </div>
